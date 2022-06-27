@@ -1,7 +1,7 @@
-package com.hyunjine.petplant
+package com.hyunjine.petplant.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.hyunjine.petplant.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
