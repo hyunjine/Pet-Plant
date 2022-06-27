@@ -6,6 +6,15 @@
     app:startDestination="@id/testFragment">
     <fragment
         android:id="@+id/testFragment"
+        tools:layout="@layout/fragment_test"
         android:name="com.hyunjine.petplant.TestFragment"
         android:label="TestFragment" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.hyunjine.petplant.view.CameraFragment"
+        android:label="CameraFragment" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.hyunjine.petplant.view.CalendarFragment"
+        android:label="CalendarFragment" />
 </navigation>
