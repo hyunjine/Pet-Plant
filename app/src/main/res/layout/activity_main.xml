@@ -20,7 +20,7 @@
             app:navGraph="@navigation/nav_graph" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigate"
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:itemIconSize="20dp"
@@ -28,7 +28,6 @@
             app:itemTextColor="@color/bottom_menu_item_color"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_navigation" />
-
 
     </LinearLayout>
 </layout>
