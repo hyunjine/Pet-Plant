@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PetPlant</string>
+    <!-- Bottom Navigation -->
+    <string name="home">홈</string>
+    <string name="camera">카메라</string>
+    <string name="calendar">달력</string>
+
 </resources>

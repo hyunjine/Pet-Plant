@@ -3,18 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/testFragment">
+    app:startDestination="@id/plantRoomFragment">
+
     <fragment
-        android:id="@+id/testFragment"
-        tools:layout="@layout/fragment_test"
-        android:name="com.hyunjine.petplant.TestFragment"
-        android:label="TestFragment" />
-    <fragment
-        android:id="@+id/cameraFragment"
-        android:name="com.hyunjine.petplant.view.CameraFragment"
-        android:label="CameraFragment" />
-    <fragment
-        android:id="@+id/calendarFragment"
-        android:name="com.hyunjine.petplant.view.CalendarFragment"
-        android:label="CalendarFragment" />
+        android:id="@+id/plantRoomFragment"
+        android:name="com.hyunjine.petplant.view.main.plant_room.PlantRoomFragment"
+        android:label="PlantRoomFragment"
+        tools:layout="@layout/fragment_plant_room" />
 </navigation>

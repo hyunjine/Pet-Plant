@@ -2,14 +2,14 @@
     <item
         android:id="@+id/testFragment"
         android:icon="@drawable/ic_home"
-        android:title="홈"/>
+        android:title="@string/home"/>
 
     <item
-        android:id="@+id/cameraFragment"
-        android:title="" />
+        android:icon="@drawable/ic_camera"
+        android:title="@string/camera"/>
 
     <item
-        android:id="@+id/calendarFragment"
+
         android:icon="@drawable/ic_calendar"
-        android:title="달력"/>
+        android:title="@string/calendar"/>
 </menu>

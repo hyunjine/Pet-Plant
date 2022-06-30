@@ -35,11 +35,6 @@ abstract class BaseFragment<T : ViewDataBinding, R : BaseViewModel> : Fragment()
      */
     abstract fun initView()
 
-    /**
-     * onResume()
-     */
-    abstract fun onEvent()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setViewModel()
@@ -57,7 +52,6 @@ abstract class BaseFragment<T : ViewDataBinding, R : BaseViewModel> : Fragment()
 
         navController = Navigation.findNavController(binding.root)
         initView()
-        onEvent()
     }
 
     override fun onDestroyView() {
