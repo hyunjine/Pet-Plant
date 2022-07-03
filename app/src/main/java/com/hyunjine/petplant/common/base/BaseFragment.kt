@@ -4,60 +4,50 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
+import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<T : ViewDataBinding, R : BaseViewModel> : Fragment() {
-    /**
-     * 레이아웃 설정
-     */
-    abstract val layoutResourceId: Int
+abstract class BaseFragment<T : ViewBinding, R: BaseViewModel>: Fragment() {
 
-    /**
-     * onCreate()
-     */
-
+    protected lateinit var navController : NavController
+    private var _binding: T? = null
+    protected val binding get() = _binding!!
     protected lateinit var viewModel: R
     abstract fun setViewModel()
-
-    /**
-     * onCreateView()
-     */
-    private var _binding : T? = null
-    protected val binding get() = _binding!!
-    protected lateinit var navController : NavController
-
-    /**
-     * onViewCreated()
-     */
-    abstract fun initView()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setViewModel()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = DataBindingUtil.inflate(inflater, layoutResourceId, container,false)
-        binding.lifecycleOwner = viewLifecycleOwner
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = setBinding(inflater, container)
         return binding.root
     }
 
+    abstract fun setBinding(lf: LayoutInflater, ct: ViewGroup?) : T
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         navController = Navigation.findNavController(binding.root)
         initView()
     }
+
+    abstract fun initView()
+
+    protected fun startFragment(direction: NavDirections) = navController.navigate(direction)
+
+    protected fun backStack() = navController.popBackStack()
 
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
     }
-
-    protected fun backStack() = navController.popBackStack()
 }

@@ -1,4 +1,4 @@
-package com.hyunjine.petplant.view.post.type.vm
+package com.hyunjine.petplant.view.post.types.vm
 
 import com.hyunjine.petplant.common.base.BaseViewModel
 

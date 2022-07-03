@@ -7,6 +7,7 @@ import androidx.navigation.ui.NavigationUI
 import com.hyunjine.petplant.R
 import com.hyunjine.petplant.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
