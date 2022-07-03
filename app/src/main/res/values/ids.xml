@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="section_1" type="id" />
+    <item name="section_2" type="id" />
+    <item name="section_3" type="id" />
+    <item name="section_4" type="id" />
+    <item name="section_5" type="id" />
+</resources>

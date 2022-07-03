@@ -7,6 +7,7 @@ import androidx.navigation.ui.NavigationUI
 import com.hyunjine.petplant.R
 import com.hyunjine.petplant.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -14,16 +15,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setBinding()
         initView()
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        NavigationUI.setupWithNavController(binding.bottomNavigate, navController)
     }
+
     private fun setBinding() = ActivityMainBinding.inflate(layoutInflater).also {
         binding = it
         setContentView(it.root)
     }
 
     private fun initView() {
+        setBottomNavigation()
+    }
 
+    private fun setBottomNavigation() {
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
     }
 }
