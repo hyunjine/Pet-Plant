@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nameFragment">
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="com.hyunjine.petplant.view.post.name.NameFragment"
+        android:label="NameFragment" />
+    <fragment
+        android:id="@+id/pictureFragment"
+        android:name="com.hyunjine.petplant.view.post.picture.PictureFragment"
+        android:label="PictureFragment" />
+    <fragment
+        android:id="@+id/typeFragment"
+        android:name="com.hyunjine.petplant.view.post.type.TypeFragment"
+        android:label="TypeFragment" />
+</navigation>
