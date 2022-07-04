@@ -3,7 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/nameFragment">
+    app:startDestination="@id/pictureFragment">
+    <fragment
+        android:id="@+id/pictureFragment"
+        android:name="com.hyunjine.petplant.view.post.picture.PictureFragment"
+        android:label="PictureFragment"
+        tools:layout="@layout/fragment_picture">
+        <action
+            android:id="@+id/action_pictureFragment_to_nameFragment"
+            app:destination="@id/nameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/nameFragment"
         android:name="com.hyunjine.petplant.view.post.name.NameFragment"
@@ -16,19 +29,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-    </fragment>
-    <fragment
-        android:id="@+id/pictureFragment"
-        android:name="com.hyunjine.petplant.view.post.picture.PictureFragment"
-        android:label="PictureFragment"
-        app:enterAnim="@anim/slide_in_right"
-        app:exitAnim="@anim/slide_out_left"
-        app:popEnterAnim="@anim/slide_in_left"
-        app:popExitAnim="@anim/slide_out_right"
-        tools:layout="@layout/fragment_picture">
-        <action
-            android:id="@+id/action_pictureFragment_to_nameFragment"
-            app:destination="@id/nameFragment" />
     </fragment>
     <fragment
         android:id="@+id/typeFragment"

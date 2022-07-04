@@ -16,6 +16,8 @@ class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() 
         FragmentPictureBinding.inflate(lf, ct, false)
 
     override fun initView() {
-
+        binding.tv.setOnClickListener {
+            navController.navigate(PictureFragmentDirections.actionPictureFragmentToNameFragment())
+        }
     }
 }

@@ -12,6 +12,7 @@ import com.hyunjine.petplant.common.dp
 import io.reactivex.rxjava3.core.Observable
 import java.util.concurrent.TimeUnit
 import com.hyunjine.petplant.R.id as resId
+
 class PlantProgressBar: ConstraintLayout {
     private lateinit var progressBar: ProgressBar
 
