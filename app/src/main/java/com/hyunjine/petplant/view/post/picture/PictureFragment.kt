@@ -3,22 +3,15 @@ package com.hyunjine.petplant.view.post.picture
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.gms.common.internal.service.Common
 import com.hyunjine.petplant.common.TAG
 import com.hyunjine.petplant.common.base.BaseFragment
-import com.hyunjine.petplant.common.util.Test
 import com.hyunjine.petplant.databinding.FragmentPictureBinding
 import com.hyunjine.petplant.view.post.picture.vm.PictureViewModel
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() {
 
-    companion object {
-        val A = 0
-    }
     override fun setViewModel() {
         viewModel = ViewModelProvider(this)[PictureViewModel::class.java]
         viewModel.activity = this
@@ -35,7 +28,7 @@ class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() 
             viewModel.getString()
         }
         binding.camera.setOnClickListener {
-            binding.tv.text = A.toString()
+            go()
         }
         binding.clPostPicture.setOnClickListener {
             Log.d(TAG, "post")
@@ -44,9 +37,11 @@ class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() 
     }
 
     private fun go() {
-        arr.add(count)
-        count += 1000000L
+        Log.d(TAG, "go: ")
+        test = binding.tv
+    }
 
-        Log.d(TAG, arr.size.toString())
+    companion object {
+        lateinit var test: TextView
     }
 }
