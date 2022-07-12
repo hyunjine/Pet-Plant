@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="main_green">#33C580</color>
+    <color name="kakao_yello">#F9E000</color>
+    <color name="naver_green">#03C75A</color>
 </resources>
