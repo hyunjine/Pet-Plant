@@ -1,4 +1,4 @@
-package com.hyunjine.petplant.common.custom_view
+package com.hyunjine.petplant.view.custom_view
 
 import android.content.Context
 import android.graphics.Color

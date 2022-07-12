@@ -20,42 +20,15 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.92" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btn_google_login"
+    <com.hyunjine.petplant.view.custom_view.LoginButton
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/bg_round_edge_rectangle_kakao"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        app:layout_constraintEnd_toEndOf="@id/end"
         app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:text="@string/kakao_login"
+        app:textColor="@color/black"
+        app:ic="@drawable/ic_kakao"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:duplicateParentState="true"
-            android:src="@drawable/ic_kakaotalk"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tv_login"
-            app:layout_constraintHorizontal_bias="0.2625"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:duplicateParentState="true"
-            android:includeFontPadding="false"
-            android:text="@string/kakao_login"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:bg="@drawable/bg_round_edge_rectangle_kakao" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
