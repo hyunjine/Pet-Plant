@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun onViewEvent() = binding.run {
-        btnKakao.setOnClickListener { checkLoginStatus() }
+        btnKakao.setOnClickLoginListener { checkLoginStatus() }
     }
 
     private fun checkLoginStatus() {

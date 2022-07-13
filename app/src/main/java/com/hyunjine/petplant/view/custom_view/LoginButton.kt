@@ -29,7 +29,9 @@ class LoginButton: ConstraintLayout {
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
         super.onLayout(changed, left, top, right, bottom)
-        binding.layoutLogin.setOnClickListener { listener() }
+        binding.layoutLogin.setOnClickListener {
+            if (::listener.isInitialized) listener()
+        }
     }
 
     @SuppressLint("Recycle")

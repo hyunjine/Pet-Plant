@@ -1,10 +1,7 @@
 package com.hyunjine.petplant
 
 import android.app.Application
-import android.util.Log
-import com.hyunjine.petplant.common.TAG
 import com.kakao.sdk.common.KakaoSdk
-import com.kakao.sdk.common.util.Utility
 
 class PetPlantApplication: Application() {
     override fun onCreate() {
