@@ -10,7 +10,10 @@ import com.hyunjine.petplant.databinding.LayoutLoginBinding
 
 class LoginButton: ConstraintLayout {
     private lateinit var binding: LayoutLoginBinding
-
+    private lateinit var listener: () -> Unit
+    fun setOnClickLoginListener(listener: () -> Unit) {
+        this.listener = listener
+    }
     constructor(context: Context) : super(context){
         init(context)
     }
@@ -22,6 +25,11 @@ class LoginButton: ConstraintLayout {
     private fun init(context : Context){
         binding = LayoutLoginBinding.bind(LayoutInflater.from(context).inflate(R.layout.layout_login,this,false))
         addView(binding.root)
+    }
+
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        super.onLayout(changed, left, top, right, bottom)
+        binding.layoutLogin.setOnClickListener { listener() }
     }
 
     @SuppressLint("Recycle")
@@ -39,6 +47,4 @@ class LoginButton: ConstraintLayout {
             }
             recycle()
         }
-
-
 }

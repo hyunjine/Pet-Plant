@@ -21,14 +21,28 @@
         app:layout_constraintGuide_percent="0.92" />
 
     <com.hyunjine.petplant.view.custom_view.LoginButton
+        android:id="@+id/btn_kakao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/start"
-        app:layout_constraintEnd_toEndOf="@id/end"
-        app:text="@string/kakao_login"
-        app:textColor="@color/black"
+        app:bg="@drawable/bg_round_edge_rectangle_kakao"
         app:ic="@drawable/ic_kakao"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
         app:layout_constraintTop_toTopOf="parent"
-        app:bg="@drawable/bg_round_edge_rectangle_kakao" />
+        app:text="@string/kakao_login"
+        app:textColor="@color/black" />
+
+    <com.hyunjine.petplant.view.custom_view.LoginButton
+        android:id="@+id/btn_naver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:bg="@drawable/bg_round_edge_rectangle_naver"
+        app:ic="@drawable/ic_naver"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/btn_kakao"
+        app:text="@string/naver_login"
+        app:textColor="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
