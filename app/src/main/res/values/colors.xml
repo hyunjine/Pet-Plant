@@ -11,4 +11,11 @@
     <color name="main_green">#33C580</color>
     <color name="kakao_yello">#F9E000</color>
     <color name="naver_green">#03C75A</color>
+
+    <color name="colorPrimary">#FFB20C</color>
+    <color name="colorPrimaryDark">#DE9B0B</color>
+    <color name="colorAccent">#FFB20C</color>
+    <color name="textHeadline">#434343</color>
+    <color name="textDescription">#686868</color>
+    <color name="lightGray">#EAEAEA</color>
 </resources>

@@ -20,15 +20,42 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.92" />
 
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_sprout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintWidth_percent="0.2" />
+
+    <TextView
+        android:id="@+id/tv_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/img_logo"
+        app:layout_constraintVertical_bias="0.1" />
+
     <com.hyunjine.petplant.view.custom_view.LoginButton
         android:id="@+id/btn_kakao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:bg="@drawable/bg_round_edge_rectangle_kakao"
         app:ic="@drawable/ic_kakao"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/end"
         app:layout_constraintStart_toStartOf="@id/start"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_app_name"
+        app:layout_constraintVertical_bias="0.5"
         app:text="@string/kakao_login"
         app:textColor="@color/black" />
 
@@ -36,12 +63,13 @@
         android:id="@+id/btn_naver"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         app:bg="@drawable/bg_round_edge_rectangle_naver"
         app:ic="@drawable/ic_naver"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/end"
         app:layout_constraintStart_toStartOf="@id/start"
         app:layout_constraintTop_toBottomOf="@id/btn_kakao"
+        app:layout_constraintVertical_bias="0.1"
         app:text="@string/naver_login"
         app:textColor="@color/white" />
 
