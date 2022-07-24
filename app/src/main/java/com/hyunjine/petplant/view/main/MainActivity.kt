@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         setBottomNavigation()
+
     }
 
     private fun setBottomNavigation() {

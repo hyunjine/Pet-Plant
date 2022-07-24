@@ -18,7 +18,4 @@ class NameFragment: BaseFragment<FragmentNameBinding, NameViewModel>() {
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
 }

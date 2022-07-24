@@ -9,18 +9,18 @@ import java.util.concurrent.TimeUnit
 
 object FirebaseTokenClient {
 
-    private var okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(loggingInterceptor)
-        .connectTimeout(60, TimeUnit.SECONDS)
-        .build()
-    fun getClient(): FirebaseTokenService {
-
-        return Retrofit.Builder()
-            .client(okHttpClient)
-            .baseUrl("https://192.168.0.5:8080")
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(FirebaseTokenService::class.java)
-    }
+//    private var okHttpClient = OkHttpClient.Builder()
+//        .addInterceptor(loggingInterceptor)
+//        .connectTimeout(60, TimeUnit.SECONDS)
+//        .build()
+//    fun getClient(): FirebaseTokenService {
+//
+//        return Retrofit.Builder()
+//            .client(okHttpClient)
+//            .baseUrl("https://192.168.0.5:8080")
+//            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//            .create(FirebaseTokenService::class.java)
+//    }
 }

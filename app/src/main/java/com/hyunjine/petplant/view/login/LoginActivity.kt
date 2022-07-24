@@ -44,7 +44,6 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initView() {
         onViewEvent()
-        viewModel.getToken()
     }
 
     private fun onViewEvent() = binding.run {

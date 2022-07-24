@@ -11,17 +11,6 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 
 class LoginViewModel : BaseViewModel() {
-    private val compositeDisposable: CompositeDisposable by lazy { CompositeDisposable() }
 
-    fun getToken() {
-        Log.d(TAG, "getToken: ")
-        FirebaseTokenClient.getClient().getFirebaseToken()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                Log.d(TAG, "initView: $it")
-            }, {
-                Log.e(TAG, "initView: ", it)
-            }).addTo(compositeDisposable)
-    }
+
 }
