@@ -47,11 +47,11 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/ic_add"
-            app:layout_constraintWidth_percent="0.25"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.25" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/camera"
+        android:id="@+id/img_camera"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -77,5 +77,15 @@
         app:layout_constraintTop_toBottomOf="@id/cl_post_picture"
         app:layout_constraintVertical_bias="0.2"
         app:layout_constraintWidth_percent="0.1" />
+
+    <com.zhpan.bannerview.BannerViewPager
+        android:id="@+id/banner_view"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/img_camera" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,4 +24,8 @@
         <item name="colorOnPrimary">#000</item>
     </style>
 
+    <style name="EditTextCursorColor">
+        <item name="colorControlActivated">@color/main_green</item>
+    </style>
+
 </resources>

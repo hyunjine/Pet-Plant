@@ -18,4 +18,6 @@
     <color name="textHeadline">#434343</color>
     <color name="textDescription">#686868</color>
     <color name="lightGray">#EAEAEA</color>
+
+    <color name="red">#FF0000</color>
 </resources>

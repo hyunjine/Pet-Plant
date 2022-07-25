@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.hyunjine.petplant.common.TAG
-import com.hyunjine.petplant.view.custom_view.PlantProgressBar
 import com.hyunjine.petplant.databinding.ActivityPostBinding
+import com.hyunjine.petplant.view.custom_view.PlantProgressBar
 import com.hyunjine.petplant.view.splash.SplashActivity
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay

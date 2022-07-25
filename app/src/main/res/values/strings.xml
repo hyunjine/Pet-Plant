@@ -7,5 +7,8 @@
     <string name="kakao_login">카카오 로그인</string>
     <string name="naver_login">네이버 로그인</string>
 
-    <string name="plant_name">식물이의 이름을 귀엽게 해볼까요?</string>
+    <string name="plant_name_des">식물이의 이름을 귀엽게 해볼까요?</string>
+    <string name="plant_name">애칭</string>
+    <string name="txt_error_name">확인부탁</string>
+
 </resources>

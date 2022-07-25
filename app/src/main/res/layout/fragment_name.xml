@@ -33,23 +33,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lay_plant_name"
+        android:id="@+id/lay_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="이름"
+        android:layout_marginTop="15dp"
+        android:hint="@string/plant_name"
         app:boxStrokeColor="@color/main_green"
         app:endIconMode="clear_text"
         app:hintTextColor="@color/main_green"
-        app:layout_constraintEnd_toEndOf="@id/start"
-        app:layout_constraintStart_toStartOf="@id/end"
-        app:layout_constraintTop_toBottomOf="@id/tv_plant_name" >
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/tv_plant_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_plant_name"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
+            android:theme="@style/EditTextCursorColor"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textCursorDrawable="@drawable/edit_text_cursor_color" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
