@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.hyunjine.petplant.R
 import com.hyunjine.petplant.databinding.FragmentViewPagerBinding
-import com.hyunjine.petplant.view.post.picture.adapter.ViewPagerAdapter
 import com.zhpan.bannerview.BannerViewPager
 import com.zhpan.bannerview.constants.PageStyle
 import com.zhpan.indicator.enums.IndicatorSlideMode

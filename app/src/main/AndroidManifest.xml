@@ -59,6 +59,9 @@
                     android:scheme="${KAKAO_NATIVE_API_KEY}" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".common.util.media_select.MediaSelectActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

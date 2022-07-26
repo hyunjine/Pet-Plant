@@ -1,17 +1,18 @@
 package com.hyunjine.petplant.view.post.picture
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.hyunjine.petplant.R
 import com.hyunjine.petplant.common.base.BaseFragment
+import com.hyunjine.petplant.common.util.media_select.MediaSelectActivity
 import com.hyunjine.petplant.databinding.FragmentPictureBinding
 import com.hyunjine.petplant.view.post.picture.vm.PictureViewModel
 import com.hyunjine.petplant.view.view_pager.ViewPagerFragment
 
 class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() {
-
     override fun initView() = binding.run {
         setViewPager()
         onClickEvent()
@@ -39,7 +40,7 @@ class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() 
         imgCamera.setOnClickListener {
         }
         clPostPicture.setOnClickListener {
-            startFragment(PictureFragmentDirections.actionPictureFragmentToNameFragment())
+            requireActivity().startActivity(Intent(requireActivity(), MediaSelectActivity::class.java))
         }
     }
 
