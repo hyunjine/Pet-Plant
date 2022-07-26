@@ -1,6 +1,7 @@
 package com.hyunjine.petplant.common.base
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.viewbinding.ViewBinding
+import com.hyunjine.petplant.common.TAG
 
 abstract class BaseFragment<T : ViewBinding, R: BaseViewModel>: Fragment() {
 

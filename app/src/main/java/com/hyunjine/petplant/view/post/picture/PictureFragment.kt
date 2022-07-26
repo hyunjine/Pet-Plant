@@ -1,45 +1,52 @@
 package com.hyunjine.petplant.view.post.picture
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.SimpleAdapter
 import androidx.lifecycle.ViewModelProvider
 import com.hyunjine.petplant.R
 import com.hyunjine.petplant.common.base.BaseFragment
 import com.hyunjine.petplant.databinding.FragmentPictureBinding
-import com.hyunjine.petplant.view.post.picture.adapter.ViewPagerAdapter
 import com.hyunjine.petplant.view.post.picture.vm.PictureViewModel
-import com.zhpan.bannerview.BannerViewPager
+import com.hyunjine.petplant.view.view_pager.ViewPagerFragment
 
 class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() {
-    private lateinit var mViewPager: BannerViewPager<Int>
 
-    private fun setupViewPager() = binding.run {
+    override fun initView() = binding.run {
+        setViewPager()
+        onClickEvent()
+    }
 
-        (bannerView as BannerViewPager<Int>).also { mViewPager = it }
-        bannerView.apply {
-            adapter = ViewPagerAdapter()
-            setLifecycleRegistry(lifecycle)
-        }.create()
+    private fun setViewPager() = ViewPagerFragment().run {
+        setViewPagerFragment(this)
+        setOnViewCreatedListener {
+            val imageList = mutableListOf(
+                R.drawable.bg_round_edge_rectangle_gray_border,
+                R.drawable.bg_round_edge_rectangle_gray_border,
+                R.drawable.bg_round_edge_rectangle_gray_border
+            )
+            setImageResource(imageList)
+        }
+    }
+
+    private fun setViewPagerFragment(fragment: ViewPagerFragment) =
+        requireActivity().supportFragmentManager.beginTransaction().run {
+            replace(binding.fragViewPager.id, fragment)
+            commit()
+        }
+
+    private fun onClickEvent() = binding.run {
+        imgCamera.setOnClickListener {
+        }
+        clPostPicture.setOnClickListener {
+            startFragment(PictureFragmentDirections.actionPictureFragmentToNameFragment())
+        }
     }
 
     override fun setViewModel() {
         viewModel = ViewModelProvider(this)[PictureViewModel::class.java]
-        viewModel.activity = this
     }
 
     override fun setBinding(lf: LayoutInflater, ct: ViewGroup?): FragmentPictureBinding =
         FragmentPictureBinding.inflate(lf, ct, false)
-
-    override fun initView() {
-        setupViewPager()
-        binding.tv.setOnClickListener {
-            mViewPager.refreshData(mutableListOf(R.drawable.ic_add, R.drawable.ic_add, R.drawable.ic_add))
-        }
-        binding.imgCamera.setOnClickListener {
-        }
-        binding.clPostPicture.setOnClickListener {
-            startFragment(PictureFragmentDirections.actionPictureFragmentToNameFragment())
-        }
-    }
 }
