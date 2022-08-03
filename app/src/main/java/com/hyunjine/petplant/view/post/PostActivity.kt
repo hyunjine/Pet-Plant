@@ -26,11 +26,18 @@ class PostActivity: AppCompatActivity() {
         setBinding()
         initView()
     }
-
+    private var text: String = ""
     private fun setBinding() = ActivityPostBinding.inflate(layoutInflater).also {
         binding = it
         setContentView(it.root)
+        a()
+        Log.d(TAG, "setBinding: $text")
+        Log.d(TAG, "setBinding: ")
+        AppAlertDialog(this, "제목입니다", "본문입니다.").show {
+
+        }
     }
+    fun a() = "abc".also { text = it }
 
     private fun initView() {
         binding.run {
