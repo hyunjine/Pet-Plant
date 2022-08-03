@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hyunjine.petplant.common.TAG
 import com.hyunjine.petplant.databinding.ActivityPostBinding
 import com.hyunjine.petplant.view.custom_view.PlantProgressBar
+import com.hyunjine.petplant.view.dialog.AppAlertDialog
 import com.hyunjine.petplant.view.splash.SplashActivity
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
@@ -20,11 +21,18 @@ class PostActivity: AppCompatActivity() {
         setBinding()
         initView()
     }
-
+    private var text: String = ""
     private fun setBinding() = ActivityPostBinding.inflate(layoutInflater).also {
         binding = it
         setContentView(it.root)
+        a()
+        Log.d(TAG, "setBinding: $text")
+        Log.d(TAG, "setBinding: ")
+        AppAlertDialog(this, "제목입니다", "본문입니다.").show {
+
+        }
     }
+    fun a() = "abc".also { text = it }
 
     private fun initView() {
         binding.run {

@@ -9,6 +9,7 @@ import com.hyunjine.petplant.R
 import com.hyunjine.petplant.common.base.BaseFragment
 import com.hyunjine.petplant.common.util.media_select.MediaSelectActivity
 import com.hyunjine.petplant.databinding.FragmentPictureBinding
+import com.hyunjine.petplant.view.main.MainActivity
 import com.hyunjine.petplant.view.post.picture.vm.PictureViewModel
 import com.hyunjine.petplant.view.view_pager.ViewPagerFragment
 
@@ -34,6 +35,7 @@ class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() 
         requireActivity().supportFragmentManager.beginTransaction().run {
             replace(binding.fragViewPager.id, fragment)
             commit()
+            requireContext().fi
         }
 
     private fun onClickEvent() = binding.run {
