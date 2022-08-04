@@ -60,7 +60,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".common.util.media_select.MediaSelectActivity"
+            android:name=".view.media_select.MediaSelectActivity"
             android:exported="true" />
     </application>
 

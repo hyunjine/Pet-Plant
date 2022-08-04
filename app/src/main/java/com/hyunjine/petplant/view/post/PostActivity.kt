@@ -1,5 +1,6 @@
 package com.hyunjine.petplant.view.post
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,10 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class PostActivity: AppCompatActivity() {
+    companion object {
+        var context: Context? = null
+    }
+
     private lateinit var binding: ActivityPostBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,18 +26,11 @@ class PostActivity: AppCompatActivity() {
         setBinding()
         initView()
     }
-    private var text: String = ""
+
     private fun setBinding() = ActivityPostBinding.inflate(layoutInflater).also {
         binding = it
         setContentView(it.root)
-        a()
-        Log.d(TAG, "setBinding: $text")
-        Log.d(TAG, "setBinding: ")
-        AppAlertDialog(this, "제목입니다", "본문입니다.").show {
-
-        }
     }
-    fun a() = "abc".also { text = it }
 
     private fun initView() {
         binding.run {

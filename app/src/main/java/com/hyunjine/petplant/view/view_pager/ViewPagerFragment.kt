@@ -1,5 +1,6 @@
 package com.hyunjine.petplant.view.view_pager
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,7 @@ import com.zhpan.indicator.enums.IndicatorStyle
 
 class ViewPagerFragment: Fragment() {
     private lateinit var binding: FragmentViewPagerBinding
-    private lateinit var viewPager: BannerViewPager<Int>
+    private lateinit var viewPager: BannerViewPager<Uri>
     private lateinit var viewCreatedListener: () -> Unit
     fun setOnViewCreatedListener(listener: () -> Unit) {
         viewCreatedListener = listener
@@ -34,13 +35,15 @@ class ViewPagerFragment: Fragment() {
 
     private fun setViewAdapter() = binding.run {
         viewPager = binding.root.findViewById(R.id.banner_view)
+
         viewPager.apply {
             adapter = ViewPagerAdapter()
             setLifecycleRegistry(lifecycle)
             setCanLoop(false)
             setAutoPlay(false)
             setPageStyle(PageStyle.MULTI_PAGE_OVERLAP)
-            setRevealWidth(150)
+            setRevealWidth(100)
+            setPageMargin(20)
             setIndicatorStyle(IndicatorStyle.CIRCLE)
             setIndicatorSlideMode(IndicatorSlideMode.WORM)
             setIndicatorSliderColor(
@@ -56,7 +59,7 @@ class ViewPagerFragment: Fragment() {
         }
     }
 
-    fun setImageResource(list: MutableList<Int>) {
+    fun setImageResource(list: MutableList<Uri>) {
         viewPager.refreshData(list)
     }
 
