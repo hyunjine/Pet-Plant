@@ -1,4 +1,4 @@
-package com.hyunjine.petplant.view.main
+package com.hyunjine.petplant.common.util
 
 import com.google.android.material.bottomappbar.BottomAppBar
 

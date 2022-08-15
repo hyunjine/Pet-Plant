@@ -3,6 +3,7 @@ package com.hyunjine.petplant.view.main
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.hyunjine.petplant.common.base.BaseActivity
+import com.hyunjine.petplant.common.util.HideListenableBottomAppBarBehavior
 import com.hyunjine.petplant.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inflate(it) }) {
