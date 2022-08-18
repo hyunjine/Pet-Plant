@@ -4,6 +4,7 @@
     package="com.hyunjine.petplant">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature android:name="android.hardware.camera.any" />
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -59,9 +60,6 @@
                     android:scheme="${KAKAO_NATIVE_API_KEY}" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.media_select.MediaSelectActivity"
-            android:exported="true" />
     </application>
 
 </manifest>
