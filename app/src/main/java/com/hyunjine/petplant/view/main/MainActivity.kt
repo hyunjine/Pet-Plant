@@ -21,7 +21,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
                 tvEtc.visibility = View.GONE
             }
 
-
             override fun onSlideUp() {
                 imgCalendar.visibility = View.VISIBLE
                 imgEtc.visibility = View.VISIBLE
