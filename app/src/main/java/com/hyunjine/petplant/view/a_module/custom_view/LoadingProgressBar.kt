@@ -1,4 +1,4 @@
-package com.hyunjine.petplant.view.custom_view
+package com.hyunjine.petplant.view.a_module.custom_view
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.hyunjine.petplant.R
-import com.hyunjine.petplant.databinding.LayoutLoadingBinding
+import com.hyunjine.petplant.databinding.CvLayoutLoadingBinding
 
 class LoadingProgressBar: ConstraintLayout {
-    private lateinit var binding: LayoutLoadingBinding
+    private lateinit var binding: CvLayoutLoadingBinding
 
     constructor(context: Context) : super(context){
         init(context)
@@ -19,7 +19,7 @@ class LoadingProgressBar: ConstraintLayout {
     }
 
     private fun init(context :Context){
-        binding = LayoutLoadingBinding.bind(LayoutInflater.from(context).inflate(R.layout.layout_loading,this,false))
+        binding = CvLayoutLoadingBinding.bind(LayoutInflater.from(context).inflate(R.layout.cv_layout_loading,this,false))
         addView(binding.root)
     }
 

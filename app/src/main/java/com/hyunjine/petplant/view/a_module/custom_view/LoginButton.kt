@@ -1,4 +1,4 @@
-package com.hyunjine.petplant.view.custom_view
+package com.hyunjine.petplant.view.a_module.custom_view
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,10 +6,10 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.hyunjine.petplant.R
-import com.hyunjine.petplant.databinding.LayoutLoginBinding
+import com.hyunjine.petplant.databinding.CvLayoutLoginBinding
 
 class LoginButton: ConstraintLayout {
-    private lateinit var binding: LayoutLoginBinding
+    private lateinit var binding: CvLayoutLoginBinding
     private lateinit var listener: () -> Unit
     fun setOnClickLoginListener(listener: () -> Unit) {
         this.listener = listener
@@ -23,7 +23,7 @@ class LoginButton: ConstraintLayout {
     }
 
     private fun init(context : Context){
-        binding = LayoutLoginBinding.bind(LayoutInflater.from(context).inflate(R.layout.layout_login,this,false))
+        binding = CvLayoutLoginBinding.bind(LayoutInflater.from(context).inflate(R.layout.cv_layout_login,this,false))
         addView(binding.root)
     }
 

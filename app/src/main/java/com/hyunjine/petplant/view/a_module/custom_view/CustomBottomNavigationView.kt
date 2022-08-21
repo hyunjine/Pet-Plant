@@ -1,10 +1,9 @@
-package com.hyunjine.petplant.view.custom_view
+package com.hyunjine.petplant.view.a_module.custom_view
 
 import android.content.Context
 import android.util.AttributeSet
 import androidx.core.content.ContextCompat
 import android.graphics.*
-import android.util.Log
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.hyunjine.petplant.R
 

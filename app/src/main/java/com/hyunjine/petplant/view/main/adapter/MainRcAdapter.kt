@@ -1,4 +1,4 @@
-package com.hyunjine.petplant.view.main.home.adapter
+package com.hyunjine.petplant.view.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hyunjine.petplant.data.model.PlantInfo
 import com.hyunjine.petplant.databinding.RcMainPlantItemBinding
 
-class HomeRvAdapter : ListAdapter<PlantInfo, HomeRvAdapter.HomeRvViewHolder>(diffUtil) {
+class MainRcAdapter : ListAdapter<PlantInfo, MainRcAdapter.HomeRvViewHolder>(diffUtil) {
     private lateinit var listener: () -> Unit
 
     inner class HomeRvViewHolder(val binding: RcMainPlantItemBinding) : RecyclerView.ViewHolder(binding.root) {
