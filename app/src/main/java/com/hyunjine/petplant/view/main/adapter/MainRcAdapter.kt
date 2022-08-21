@@ -1,10 +1,13 @@
 package com.hyunjine.petplant.view.main.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.hyunjine.petplant.common.TAG
 import com.hyunjine.petplant.data.model.PlantInfo
 import com.hyunjine.petplant.databinding.RcMainPlantItemBinding
 
@@ -28,6 +31,10 @@ class MainRcAdapter : ListAdapter<PlantInfo, MainRcAdapter.HomeRvViewHolder>(dif
 
     override fun onBindViewHolder(holder: HomeRvViewHolder, position: Int) {
         holder.bind(getItem(position))
+        if (position == currentList.size - 1) {
+            Log.d(TAG, "onBindViewHolder: ")
+            holder.binding.line.visibility = View.INVISIBLE
+        }
         // 검색어 클릭
         holder.itemView.setOnClickListener {
             if (::listener.isInitialized) listener()
