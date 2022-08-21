@@ -5,34 +5,47 @@
     android:layout_height="wrap_content"
     android:padding="10dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_plant"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/ic_sprout"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:src="@drawable/test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.2" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--        android:id="@+id/img_plant"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:adjustViewBounds="true"-->
+    <!--        android:src="@drawable/ic_sprout"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintWidth_percent="0.2" />-->
 
     <TextView
         android:id="@+id/tv_plant_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
         android:text="식물이름"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_plant_type"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/img_plant"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/img_plant" />
 
     <TextView
         android:id="@+id/tv_plant_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="로즈마리"
         android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/img_plant"
         app:layout_constraintStart_toStartOf="@id/tv_plant_name"
         app:layout_constraintTop_toBottomOf="@id/tv_plant_name" />
 

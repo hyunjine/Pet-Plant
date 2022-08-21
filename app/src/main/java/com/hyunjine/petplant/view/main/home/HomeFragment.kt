@@ -1,21 +1,19 @@
 package com.hyunjine.petplant.view.main.home
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.hyunjine.petplant.common.TAG
 import com.hyunjine.petplant.common.base.BaseFragment
+import com.hyunjine.petplant.data.model.PlantInfo
 import com.hyunjine.petplant.databinding.FragmentHomeBinding
-import com.hyunjine.petplant.view.main.etc.vm.EtcViewModel
-import com.hyunjine.petplant.view.main.home.adapter.RecentViewAdapter
+import com.hyunjine.petplant.view.main.home.adapter.HomeRvAdapter
 import com.hyunjine.petplant.view.main.home.vm.HomeViewModel
 import com.hyunjine.petplant.view.main.vm.MainViewModel
 
 class HomeFragment: BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     private lateinit var activityViewModel: MainViewModel
-    private lateinit var adapter: RecentViewAdapter
+    private val rvAdapter: HomeRvAdapter by lazy { HomeRvAdapter() }
     override fun setViewModel() {
         activityViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
     }
@@ -25,25 +23,34 @@ class HomeFragment: BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun initView() {
         setRecyclerView()
+        onClickEvent()
     }
 
-    private fun setRecyclerView() {
-        adapter = RecentViewAdapter()
-        binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.setHasFixedSize(true)
+    private fun setRecyclerView() = binding.recyclerView.apply {
+        adapter = rvAdapter
+        layoutManager = LinearLayoutManager(requireContext())
+        setHasFixedSize(true)
 
-        adapter.setDataList(arrayListOf("1", "2", "2", "2", "2", "2", "2", "2", "2", "2"))
-        binding.recyclerView.setOnScrollChangeListener { _, fromX, fromY, toX, toY ->
-            Log.d(TAG, "setRecyclerView: $fromX $fromY $toX $toY")
-            //스크롤 아래로
+        val list = arrayListOf<PlantInfo>()
+        for (i: Int in 1..10) {
+            list.add(PlantInfo(i))
+        }
+        rvAdapter.submitList(list)
+        setOnScrollChangeListener { _, _, fromY, _, toY ->
+            // Scroll Up Event
             if (fromY > toY) {
-                activityViewModel.scrollDown()
+                activityViewModel.scrollDownEvent()
             }
-            // 스크롤 위로
+            // Scroll Down Event
             else if (fromY < toY) {
-                activityViewModel.scrollUp()
+                activityViewModel.scrollUpEvent()
             }
+        }
+    }
+
+    private fun onClickEvent() = binding.run {
+        activityViewModel.setOnMoveScrollTopListener {
+            recyclerView.smoothScrollToPosition(0)
         }
     }
 }

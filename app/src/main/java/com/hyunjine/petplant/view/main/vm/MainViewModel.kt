@@ -5,25 +5,35 @@ import com.hyunjine.petplant.common.SCROLL_UP
 import com.hyunjine.petplant.common.base.BaseViewModel
 
 class MainViewModel: BaseViewModel() {
-    private lateinit var scrollListener: (Int) -> Unit
+    private lateinit var scrollEventListener: (Int) -> Unit
     private var isScrollUp = false
     private var isScrollDown = false
-    fun setOnChangeScrollListener(scrollListener: (Int) -> Unit) {
-        this.scrollListener = scrollListener
+
+    private lateinit var moveScrollListener: () -> Unit
+
+    fun setOnChangeScrollListener(scrollEventListener: (Int) -> Unit) {
+        this.scrollEventListener = scrollEventListener
     }
-    fun scrollUp() {
-        if (::scrollListener.isInitialized && !isScrollUp) {
+    fun scrollUpEvent() {
+        if (::scrollEventListener.isInitialized && !isScrollUp) {
             isScrollUp = true
             isScrollDown = false
-            scrollListener(SCROLL_UP)
+            scrollEventListener(SCROLL_UP)
         }
     }
 
-    fun scrollDown() {
-        if (::scrollListener.isInitialized && !isScrollDown) {
+    fun scrollDownEvent() {
+        if (::scrollEventListener.isInitialized && !isScrollDown) {
             isScrollDown = true
             isScrollUp = false
-            scrollListener(SCROLL_DOWN)
+            scrollEventListener(SCROLL_DOWN)
         }
+    }
+
+    fun setOnMoveScrollTopListener(moveScrollListener: () -> Unit) {
+        this.moveScrollListener = moveScrollListener
+    }
+    fun moveScrollTop() {
+        if (::moveScrollListener.isInitialized) moveScrollListener()
     }
 }

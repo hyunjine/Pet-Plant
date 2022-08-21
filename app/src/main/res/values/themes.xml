@@ -19,4 +19,7 @@
         <item name="colorControlActivated">@color/main_green</item>
     </style>
 
+    <style name="EdgeOverlayTheme">
+        <item name="android:colorEdgeEffect">@color/main_green</item>
+    </style>
 </resources>

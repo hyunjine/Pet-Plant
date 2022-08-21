@@ -29,7 +29,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
     }
 
     private fun onClickEvent() = binding.run {
-
+        btnHome.setOnClickListener {
+            viewModel.moveScrollTop()
+        }
     }
 
     private fun onViewModelEvent() = binding.run {
