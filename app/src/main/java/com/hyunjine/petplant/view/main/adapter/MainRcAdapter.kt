@@ -11,7 +11,7 @@ import com.hyunjine.petplant.common.TAG
 import com.hyunjine.petplant.data.model.PlantInfo
 import com.hyunjine.petplant.databinding.RcMainPlantItemBinding
 
-class MainRcAdapter : ListAdapter<PlantInfo, MainRcAdapter.HomeRvViewHolder>(diffUtil) {
+class MainRcAdapter : ListAdapter<PlantInfo, MainRcAdapter.HomeRvViewHolder>(MainDiff()) {
     private lateinit var listener: () -> Unit
 
     inner class HomeRvViewHolder(val binding: RcMainPlantItemBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -41,14 +41,13 @@ class MainRcAdapter : ListAdapter<PlantInfo, MainRcAdapter.HomeRvViewHolder>(dif
         }
     }
 
-    companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<PlantInfo>() {
-            override fun areContentsTheSame(oldItem: PlantInfo, newItem: PlantInfo) =
-                oldItem == newItem
+    class MainDiff : DiffUtil.ItemCallback<PlantInfo>() {
+        override fun areContentsTheSame(oldItem: PlantInfo, newItem: PlantInfo) =
+            oldItem == newItem
 
-            override fun areItemsTheSame(oldItem: PlantInfo, newItem: PlantInfo) =
-                oldItem.index == newItem.index
-        }
+        override fun areItemsTheSame(oldItem: PlantInfo, newItem: PlantInfo) =
+            oldItem.index == newItem.index
     }
+
 }
 
