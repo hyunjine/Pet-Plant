@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hyunjine.petplant.R
 import com.hyunjine.petplant.databinding.ActivityPostBinding
-import com.hyunjine.petplant.view.a_module.custom_view.PlantProgressBar
+import com.hyunjine.petplant.view._module.custom_view.PlantProgressBar
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -8,7 +8,7 @@
     android:weightSum="1"
     tools:context=".view.post.PostActivity">
 
-   <com.hyunjine.petplant.view.a_module.custom_view.PlantProgressBar
+   <com.hyunjine.petplant.view._module.custom_view.PlantProgressBar
        android:id="@+id/plant_progress"
        android:layout_width="0dp"
        android:layout_marginTop="20dp"

@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@id/img_logo"
         app:layout_constraintVertical_bias="0.1" />
 
-    <com.hyunjine.petplant.view.a_module.custom_view.LoginButton
+    <com.hyunjine.petplant.view._module.custom_view.LoginButton
         android:id="@+id/btn_kakao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         app:text="@string/kakao_login"
         app:textColor="@color/black" />
 
-    <com.hyunjine.petplant.view.a_module.custom_view.LoginButton
+    <com.hyunjine.petplant.view._module.custom_view.LoginButton
         android:id="@+id/btn_naver"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

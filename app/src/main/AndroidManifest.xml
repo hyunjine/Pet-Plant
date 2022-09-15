@@ -20,13 +20,7 @@
         android:theme="@style/Theme.PetPlant"
         tools:targetApi="n">
         <activity
-            android:name=".view.etc.EtcActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.schedule.ScheduleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.main.MainActivity"
+            android:name=".view.post.PostActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
@@ -36,6 +30,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.etc.EtcActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.schedule.ScheduleActivity"
+            android:exported="false" />
         <activity
             android:name=".view.login.LoginActivity"
             android:exported="false"
@@ -47,7 +47,7 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".view.post.PostActivity"
+            android:name=".view.main.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

@@ -1,4 +1,4 @@
-package com.hyunjine.petplant.view.a_module.custom_view
+package com.hyunjine.petplant.view._module.custom_view
 
 import android.content.Context
 import android.util.AttributeSet
