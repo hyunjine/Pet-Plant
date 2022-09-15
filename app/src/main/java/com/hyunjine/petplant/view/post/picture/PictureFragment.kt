@@ -34,7 +34,7 @@ class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() 
                 Log.e(TAG, "activityResult fail ")
                 return@registerForActivityResult
             }
-
+            Log.d(TAG, "onResultMediaActivity: ${it.javaClass.name}")
             it.data?.let { data ->
                 if (data.clipData == null) {
                     Log.d(TAG, "이미지 하나 선택: ${data.data}")
@@ -73,6 +73,7 @@ class PictureFragment: BaseFragment<FragmentPictureBinding, PictureViewModel>() 
 
     private fun onClickEvent() = binding.run {
         imgCamera.setOnClickListener {
+            startFragment(PictureFragmentDirections.actionPictureFragmentToNameFragment())
         }
         clPostPicture.setOnClickListener {
             startMediaActivity()

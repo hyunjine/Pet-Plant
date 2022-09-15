@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="@id/start"
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
-    <com.hyunjine.petplant.view.a_module.custom_view.CustomBottomNavigationView
+    <com.hyunjine.petplant.view._module.custom_view.CustomBottomNavigationView
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -127,7 +127,7 @@
                 app:layout_constraintTop_toBottomOf="@id/img_etc" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.hyunjine.petplant.view.a_module.custom_view.CustomBottomNavigationView>
+    </com.hyunjine.petplant.view._module.custom_view.CustomBottomNavigationView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_home"

@@ -1,4 +1,4 @@
-package com.hyunjine.petplant.view.a_module.dialog
+package com.hyunjine.petplant.view._module.dialog
 
 import android.content.Context
 import android.widget.TextView
